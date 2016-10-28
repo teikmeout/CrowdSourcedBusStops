@@ -1,0 +1,33 @@
+{
+  "name": "project2ga",
+  "version": "1.0.0",
+  "description": "Jonathan Ahrens WDI General Assembly",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teikmeout/project2GA.git"
+  },
+  "author": "Taka Ahrens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teikmeout/project2GA/issues"
+  },
+  "homepage": "https://github.com/teikmeout/project2GA#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.11",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  }
+}
