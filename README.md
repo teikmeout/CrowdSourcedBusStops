@@ -25,9 +25,6 @@ The main idea of this app would be to collect information from different users a
 - [x] Path
 - [ ] MongoDB
 
-### Wireframes
-(In progress)
-
 ### References
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
 - [Personal Class Notes](https://git.generalassemb.ly/teikmeout/ClassNotesGA/blob/master/express/expressNotes.md)
