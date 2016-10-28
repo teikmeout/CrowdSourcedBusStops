@@ -1,2 +1,12 @@
 # ignoring the node modules we downloaded
 node_modules
+jspm_packages
+
+# ignoring env variables
+.env
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
