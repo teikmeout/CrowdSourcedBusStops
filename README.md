@@ -14,7 +14,7 @@ The main idea of this app would be to collect information from different users a
 
 ### Technologies used:
 - [x] HTML
-- [ ] CSS
+- [x] CSS
 - [x] JS
 - [x] Node.js
 - [x] Express

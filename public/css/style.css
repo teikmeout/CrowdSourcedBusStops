@@ -20,3 +20,18 @@
   align-items: center;
   flex-direction: column;
 }
+
+.map div {
+  width: 70vw;
+  height: 80vh;
+  margin-left: 2em;
+  border: 2px dotted red;
+  float: left;
+}
+
+.map aside {
+  width: 25vw;
+  height: 80vh;
+  border: 2px dotted blue;
+  float: right;
+}
