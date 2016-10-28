@@ -4,7 +4,7 @@ Jonathan Ahrens
 WDI General Assembly
 
 ![Bus Stop](/public/images/totoro.gif)
-## Google Maps location saving
+## Google Maps API Bus Stop location saving
 
 This is a web app that will allow users to save specific locations and mark them with the public transportation option that they are using.
 
