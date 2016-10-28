@@ -13,17 +13,16 @@ Some countries do not have a correct render of their public transportation infor
 The main idea of this app would be to collect information from different users and confirm different public transportation pick up spots.
 
 ### Technologies used:
-- HTML
-- CSS
-- JS
-- Node.js
-- Express
-- Path
-- MongoDB
+- [x] HTML
+- [ ] CSS
+- [x] JS
+- [x] Node.js
+- [x] Express
+- [x] Path
+- [ ] MongoDB
 
 ### Wireframes
 (In progress)
 
 ### References
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
-# project2GA
