@@ -12,6 +12,10 @@ Some countries do not have a correct render of their public transportation infor
 ### Process
 The main idea of this app would be to collect information from different users and confirm different public transportation pick up spots.
 
+### Wireframes
+![Login wireframe](./images/Login.png)
+![Map wireframe](./images/MapScreen.png)
+
 ### Technologies used:
 - [x] HTML
 - [x] CSS
