@@ -1,6 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .login-content {
@@ -9,7 +10,7 @@
 }
 
 .login-content input {
-
+  line-height: 2em;
 }
 
 .container {
@@ -21,17 +22,14 @@
   flex-direction: column;
 }
 
-.mapa {
-  width: 70vw;
-  height: 80vh;
-  margin-left: 2em;
-  border: 2px dotted red;
-  float: left;
+#map {
+  height: 400px;
+  width: 60%;
 }
 
-.map aside {
+/*.map aside {
   width: 25vw;
   height: 80vh;
   border: 2px dotted blue;
   float: right;
-}
+}*/
