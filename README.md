@@ -20,6 +20,8 @@ The user will be able to view his saved places and delete them if he considers t
 ### Wireframes
 ![Login wireframe](/public/images/Login.png)
 ![Map wireframe](/public/images/MapScreen.png)
+Understanding User login flow
+![WhiteBoard1](/public/images/whiteBoard1.jpg)
 
 ### Technologies used:
 - [x] HTML
