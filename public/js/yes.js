@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) =>  {
 // SOURCE: Google maps API
 function initMap() {
   let uluru = {lat: 40.730610, lng: -73.935242};
+  console.log('yeah');
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 7,
     center: uluru
