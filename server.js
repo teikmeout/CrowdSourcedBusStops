@@ -43,7 +43,7 @@ app.use(cookieParser());
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: SECRET
+  secret: SECRET,
 }));
 
 // telling express that all static files come from this folder
