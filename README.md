@@ -30,6 +30,7 @@ The user will be able to view his saved places and delete them if he considers t
 - [x] Path
 - [ ] MongoDB
 - [x] dotEnv
+- [x] HTML5 Geolocation
 
 ### References
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)

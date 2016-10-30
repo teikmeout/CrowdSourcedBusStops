@@ -5,21 +5,21 @@
 
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
-const express = require('express');
-const logger = require('morgan');
-const dotEnv = require('dotenv').config({silent: true});
+const express     = require('express');
+const logger      = require('morgan');
+const dotEnv      = require('dotenv').config({silent: true});
 
 // calling in a new instance of express
-const app = express();
+const app         = express();
 // "importing" path package
-const path = require('path');
+const path        = require('path');
 // setting up ports for server
-const port = process.env.PORT || 3000;
+const port        = process.env.PORT || 3000;
 
 // setting up routes
-const homeRoute = require('./routes/home');
-const mapRoute = require('./routes/map');
-const geoRoute = require('./routes/geo');
+const homeRoute   = require('./routes/home');
+const mapRoute    = require('./routes/map');
+const geoRoute    = require('./routes/geo');
 
 
 // setting logger flavor to DEV
