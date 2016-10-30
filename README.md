@@ -29,6 +29,7 @@ The user will be able to view his saved places and delete them if he considers t
 - [x] Express
 - [x] Path
 - [ ] MongoDB
+- [x] dotEnv
 
 ### References
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
