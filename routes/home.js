@@ -19,3 +19,5 @@ indexRouter.get('/signup', (req, res) => {
 });
 
 module.exports = indexRouter;
+
+// this route replaces routes/index.js in @rapala61 project

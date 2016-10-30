@@ -1,6 +1,13 @@
 // using express routes in this file
 const router = require('express').Router();
 
+// this code is commented because it's the iTunes implementation
+// const { authenticate }    = require('../lib/auth');
+// const { searchMusic }     = require('../services/itunes');
+// const { getFavorites,
+//         saveFavorite,
+//         deleteFavorites } = require('../models/favorites');
+
 // HOME route
 router.get('/', (req, res) => {
   res.render('map', {
@@ -10,3 +17,31 @@ router.get('/', (req, res) => {
 }); // end of router
 
 module.exports = router;
+
+// CODE commented off for reference and creating of routes to work through
+// pret a manger bathroom code 8701
+// router.get('/', authenticate, getFavorites, (req, res) => {
+//   res.render('music/index', {
+//     user: res.user,
+//     results: res.results || [],
+//     favorites: res.favorites || []
+//   });
+// });
+
+// router.post('/search', authenticate, searchMusic, getFavorites, (req,res) => {
+//   res.render('music/index', {
+//     user: res.user,
+//     results: res.results || [],
+//     favorites: res.favorites || []
+//   });
+// });
+
+// router.delete('/favorites/:id', deleteFavorites, (req, res) => {
+//   res.redirect('/music');
+// });
+
+// router.post('/favorites', saveFavorite, (req, res) => {
+//   res.redirect('/music');
+// });
+
+// module.exports = router;

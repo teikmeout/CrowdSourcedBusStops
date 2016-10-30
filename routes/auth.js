@@ -10,7 +10,7 @@ const { logIn }     = require('../lib/auth');
  * and save the user to the database
  */
 authRouter.post('/', logIn, (req, res) => {
-  res.redirect('/users/profile');
+  res.redirect('/map');
 });
 
 // Logout by assigning null to the userId in the session
@@ -21,4 +21,4 @@ authRouter.delete('/', (req, res) => {
 
 module.exports = authRouter;
 
-// NOTE: this is code provided by Rafa Pacas, I have no dominated login process at all.
+// NOTE: this is code provided by @rapala61, I have no dominated login process at all.
