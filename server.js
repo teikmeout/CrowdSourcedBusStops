@@ -19,6 +19,7 @@ const port = process.env.PORT || 3000;
 // setting up routes
 const homeRoute = require('./routes/home');
 const mapRoute = require('./routes/map');
+const geoRoute = require('./routes/geo');
 
 
 // setting logger flavor to DEV
@@ -32,5 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // using correct routes
 app.use('/', homeRoute);
 app.use('/map', mapRoute);
+app.use('/geo', geoRoute);
 
 app.listen(port, () => console.log(`Server running yeah! ${port}`));
