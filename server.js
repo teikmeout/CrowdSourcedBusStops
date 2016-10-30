@@ -1,5 +1,14 @@
+// to avoid error in column separation in eslint
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+// to allow console log
+/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+
 const express = require('express');
 const logger = require('morgan');
+const dotEnv = require('dotenv').config({silent: true});
+
 // calling in a new instance of express
 const app = express();
 // "importing" path package

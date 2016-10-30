@@ -9,8 +9,25 @@
 <body>
 <h1>Bus Stop Crowdsourcing</h1>
   <div id="map" class='mapa'></div>
+  <aside class="mapa">
+    <div class='mapa user-info'>
+      <h3>Username</h3>
+      <p class='username'></p>
+    </div>
+    <div class='mapa loc-info'>
+    <form action="./maps" method="get" accept-charset="utf-8">
+    <h3>Lat</h3>
+    <input type="text" name="lat" class='lat'>
+    <h3>Long</h3>
+    <input type="text" name="long" class='lng'>
+    <h3>Bus route</h3>
+    <input type="text" name="ruta">
+    <input type="submit" value="Save">
+    </form>
+    </div>
+  </aside>
 
 <script src="/js/yes.js" type="text/javascript" charset="utf-8" async defer></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt2ccMG8ZF_bYfbxI8g4QJUf5iB4TnHT8&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=API_KEY%>callback=initMap" async defer></script>
 </body>
 </html>
