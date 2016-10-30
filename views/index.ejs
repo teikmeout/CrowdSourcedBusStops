@@ -9,9 +9,11 @@
 <body>
   <div class="container">
     <h1 class="login-content">Crowd Sourced Bus Stops</h1>
-    <input class="login-content" type="text" name="" placeholder="Username">
-    <input class="login-content" type="text" name="" placeholder="Password">
-
+    <form class="login-content" action="/auth" method="post">
+      <input class="login-content" type="text" name="user[username]" value="" placeholder="Username">
+      <input class="login-content" type="password" name="user[password]" value="" placeholder="Password">
+    </form>
+    <p class="login-content"><a href="/signup">sign up</a></p>
   </div>
 </body>
 </html>
