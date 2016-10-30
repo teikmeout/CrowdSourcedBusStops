@@ -11,18 +11,6 @@ const options = {
   maximumAge: 0
 };
 
-// FUNCTION: uses HTML5 navigator to search for location and display it on map
-// ARGS: none
-function getLocation() {
-  if (navigator.geolocation) {
-    console.log('location tracking initiated');
-    // navigator.geolocation.getCurrentPosition(returnPositionObj);
-    navigator.geolocation.getCurrentPosition(returnPositionObj, errLocation, options);
-  } else {
-    $target.innerHTML = 'Location Tracking Failed';
-  }
-}
-
 // FUNCTION:
 function returnPositionObj(position) {
   console.log(`inserting lat: ${position.coords.latitude}, lng:${position.coords.longitude} `);
@@ -35,6 +23,18 @@ function returnPositionObj(position) {
 function errLocation() {
   console.log('Error retrieving location');
 }
+// FUNCTION: uses HTML5 navigator to search for location and display it on map
+// ARGS: none
+function getLocation() {
+  if (navigator.geolocation) {
+    console.log('location tracking initiated');
+    // navigator.geolocation.getCurrentPosition(returnPositionObj);
+    navigator.geolocation.getCurrentPosition(returnPositionObj, errLocation, options);
+  } else {
+    $target.innerHTML = 'Location Tracking Failed';
+  }
+}
+
 
 // FUNCTION:
 // ARGS:
