@@ -1,14 +1,10 @@
-// DOM load listener
-document.addEventListener('DOMContentLoaded', (event) =>  {
-  console.log('DOM fully loaded');
-
-});
+/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 // declaring params for geolocation
 const options = {
   enableHighAccuracy: true,
   timeout: 5000,
-  maximumAge: 0
+  maximumAge: 0,
 };
 
 // FUNCTION:
@@ -36,38 +32,38 @@ function getLocation() {
 }
 
 
-// FUNCTION:
-// ARGS:
+// FUNCTION: callback function that creates a map with current location
+// ARGS: position from getCurrentPosition
 // SOURCE: Google maps API
 function initMap(position) {
   console.log('running initMap');
-  // let catchValues = getLocation();
-  // let uluru = getLocation();
-  // let uluru = {lat: 40.730610, lng: -73.935242};
+  // setting GMaps coordinates taken from position argument
   let uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
+  // creating new map with GMaps creator and telling it where to appear
   let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 18,
+    zoom: 20,
     center: uluru
   });
+  // determining marker position
   let marker = new google.maps.Marker({
     position: uluru,
-    map: map
+    map: map,
+    // this makes the marker a draggable item
+    draggable: true,
+    title: "Drag me!",
+    label: "🍳",
   });
+  // showing physical values to user inside of form
   const $lat = document.getElementsByClassName('lat')[0];
   const $lng = document.getElementsByClassName('lng')[0];
   $lat.value = uluru.lat;
   $lng.value = uluru.lng;
-  // showCurrentLatLng(uluru);
+
+  // adding event listener for the drag release readjutment of values
+  google.maps.event.addListener(marker, 'dragend', function (event) {
+    // changing values inside of form
+    $lat.value = this.getPosition().lat();
+    $lng.value = this.getPosition().lng();
+    console.log('got new values for lat and long');
+  });
 }
-
-// FUNCTION: function that will display the current lat and long of dropped pin
-// ARGS: ulu object that is used in initMap()
-// function showCurrentLatLng(ulu) {
-//   const $lat = document.getElementsByClassName('lat')[0];
-//   const $lng = document.getElementsByClassName('lng')[0];
-//   $lat.value = ulu.lat;
-//   $lng.value = ulu.lng;
-// }
-
-// declaring a pointer to lat and long definition
-// const $target = document.getElementById('target');
