@@ -10,12 +10,14 @@ const { logIn }     = require('../lib/auth');
  * and save the user to the database
  */
 authRouter.post('/', logIn, (req, res) => {
+  // once logged in takes you to /map and gives you option to start saving
   res.redirect('/map');
 });
 
 // Logout by assigning null to the userId in the session
 authRouter.delete('/', (req, res) => {
   req.session.userId = null;
+  // takes you to homepage to signin again once logged out
   res.redirect('/');
 });
 

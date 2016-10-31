@@ -16,7 +16,8 @@ const methodOverride   = require('method-override');
 const homeRoute        = require('./routes/home');
 const mapRoute         = require('./routes/map');
 const geoRoute         = require('./routes/geo');
-const authRoute       = require('./routes/auth');
+const authRoute        = require('./routes/auth');
+const usersRoute       = require('./routes/users'); // takes me to create user or show profile
 
 // calling in a new instance of express
 const app              = express();
@@ -54,5 +55,6 @@ app.use('/', homeRoute);
 app.use('/auth', authRoute);
 app.use('/map', mapRoute);
 app.use('/geo', geoRoute);
+app.use('/users', usersRoute);
 
 app.listen(port, () => console.log(`Server running yeah! ${port}`));

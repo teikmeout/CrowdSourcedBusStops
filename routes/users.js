@@ -11,6 +11,7 @@ const usersRouter  = express.Router();
  * It uses the createUser middleware from the user model
  */
 usersRouter.post('/', createUser, (req, res) => {
+  // redirects to home page, to signin now that user is created
   res.redirect('/');
 });
 
@@ -19,8 +20,13 @@ usersRouter.post('/', createUser, (req, res) => {
  * It redirects to /login when attempted to be reached by a non logged in user
  * It is "protected" by the authenticate middleware from the auth library
  */
+
 usersRouter.get('/profile', authenticate, (req, res) => {
-  res.render('users/profile', { user: res.user });
+  res.render('users/profile', {
+    user: res.user,
+    // fav: res.favorites
+    // once uncommented need to add getFavorites to pipeline
+  });
 });
 
 module.exports = usersRouter;
