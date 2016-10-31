@@ -12,13 +12,13 @@ const options = {
 };
 
 // FUNCTION:
-function returnPositionObj(position) {
-  console.log(`inserting lat: ${position.coords.latitude}, lng:${position.coords.longitude} `);
-  // $target.innerHTML = `Lat: ${position.coords.latitude}, Lng: ${position.coords.longitude}`;
-  let newObj = {lat: position.coords.latitude, lng: position.coords.longitude};
-  console.log(newObj);
-  return newObj;
-}
+// function returnPositionObj(position) {
+//   console.log(`inserting lat: ${position.coords.latitude}, lng:${position.coords.longitude} `);
+//   // $target.innerHTML = `Lat: ${position.coords.latitude}, Lng: ${position.coords.longitude}`;
+//   let newObj = {lat: position.coords.latitude, lng: position.coords.longitude};
+//   console.log(newObj);
+//   return newObj;
+// }
 
 function errLocation() {
   console.log('Error retrieving location');
@@ -29,7 +29,7 @@ function getLocation() {
   if (navigator.geolocation) {
     console.log('location tracking initiated');
     // navigator.geolocation.getCurrentPosition(returnPositionObj);
-    navigator.geolocation.getCurrentPosition(returnPositionObj, errLocation, options);
+    navigator.geolocation.getCurrentPosition(initMap, errLocation, options);
   } else {
     $target.innerHTML = 'Location Tracking Failed';
   }
@@ -39,19 +39,24 @@ function getLocation() {
 // FUNCTION:
 // ARGS:
 // SOURCE: Google maps API
-function initMap() {
+function initMap(position) {
   console.log('running initMap');
   // let catchValues = getLocation();
-  let uluru = getLocation();
+  // let uluru = getLocation();
   // let uluru = {lat: 40.730610, lng: -73.935242};
+  let uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
   let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 7,
+    zoom: 18,
     center: uluru
   });
   let marker = new google.maps.Marker({
     position: uluru,
     map: map
   });
+  const $lat = document.getElementsByClassName('lat')[0];
+  const $lng = document.getElementsByClassName('lng')[0];
+  $lat.value = uluru.lat;
+  $lng.value = uluru.lng;
   // showCurrentLatLng(uluru);
 }
 
