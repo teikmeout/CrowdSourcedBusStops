@@ -11,13 +11,15 @@
     <% fav.forEach((fv) => { %>
     <div class='map-item'>
       <p>lat: <%= fv.lat %>, lng: <%= fv.lng %></p>
-      <p>Bus route: <%= fv.%></p>
-      <form action="/music/favorites/<%= fave._id %>?_method=DELETE" method="post">
+      <p>Bus route: <%= fv.route %></p>
+      <form action="/music/favorites/<%#= fave._id %>?_method=DELETE" method="post">
           <input type="submit" value="Delete">
+      </form>
     </div>
-    <% }%>
+    <% })%>
     <form action="/auth?_method=DELETE" method="post">
       <input type="submit" value="Logout">
+    </form>
     </form>
   </body>
 </html>

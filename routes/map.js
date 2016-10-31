@@ -18,18 +18,23 @@ router.get('/', authenticate, (req, res) => {
   });
 }); // end of router
 
-module.exports = router;
 
 // CODE commented off for reference and creating of routes to work through
 // pret a manger bathroom code 8701
-router.get('/', authenticate, getFavorites, (req, res) => {
-  res.render('/users', {
-    user: res.user,
-    results: res.results || [],
-    favorites: res.favorites || []
-  });
+// router.get('/', authenticate, getFavorites, (req, res) => {
+//   res.render('/users', {
+//     user: res.user,
+//     results: res.results || [],
+//     favorites: res.favorites || []
+//   });
+// });
+
+// router option to add location to favorites and redirect to user profile page
+router.post('/favorites', authenticate, saveFavorite, (req, res) => {
+  res.redirect('/users/profile');
 });
 
+module.exports = router;
 // router.post('/search', authenticate, searchMusic, getFavorites, (req,res) => {
 //   res.render('music/index', {
 //     user: res.user,
@@ -42,8 +47,5 @@ router.get('/', authenticate, getFavorites, (req, res) => {
 //   res.redirect('/music');
 // });
 
-// router.post('/favorites', saveFavorite, (req, res) => {
-//   res.redirect('/music');
-// });
 
 // module.exports = router;

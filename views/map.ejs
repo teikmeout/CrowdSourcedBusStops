@@ -8,23 +8,26 @@
 </head>
 <body>
 <h1>Bus Stop Crowdsourcing</h1>
+  <%# this is where the map goes %>
   <div id="map" class='mapa'></div>
+  <%# this is where the info appears %>
   <aside class="mapa">
     <div class='mapa user-info'>
       <h3>Username: </h3>
-      <p class='username'><%= user.username %></p>
+      <p class='username'><a href="/users/profile"><%= user.username %></a></p>
       <form action="/auth?_method=DELETE" method="post">
           <input type="submit" value="Logout">
+      </form>
     </div>
     <div class='mapa loc-info'>
-    <form action="/users/profile" method="get" accept-charset="utf-8">
-    <h3>Lat</h3>
-    <input type="text" name="lat" class='lat'>
-    <h3>Long</h3>
-    <input type="text" name="long" class='lng'>
-    <h3>Bus route</h3>
-    <input type="text" name="ruta">
-    <input type="submit" value="Save">
+    <form action="/map/favorites" method="POST" accept-charset="utf-8">
+      <h3>Lat</h3>
+      <input type="text" name="favorite[lat]" class='lat'>
+      <h3>Long</h3>
+      <input type="text" name="favorite[lng]" class='lng'>
+      <h3>Bus route</h3>
+      <input type="text" name="favorite[route]">
+      <input type="submit" value="Save">
     </form>
     </div>
   </aside>

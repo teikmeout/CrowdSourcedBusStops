@@ -1,10 +1,11 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
-const express      = require('express');
-const { createUser }    = require('../models/user.js');
-const { authenticate }   = require('../lib/auth');
+const express             = require('express');
+const { createUser }      = require('../models/user.js');
+const { authenticate }    = require('../lib/auth');
+const { getFavorites }    = require('../models/favorites.js');
 
-const usersRouter  = express.Router();
+const usersRouter         = express.Router();
 
 /**
  * Creates a new user by handling the POST request from a form with action `/users`
@@ -21,10 +22,11 @@ usersRouter.post('/', createUser, (req, res) => {
  * It is "protected" by the authenticate middleware from the auth library
  */
 
-usersRouter.get('/profile', authenticate, (req, res) => {
-  res.render('users/profile', {
+// need to add function to pipeline that finds all the saved favs of this user
+usersRouter.get('/profile', authenticate, getFavorites, (req, res) => {
+  res.render('./users/profile', {
     user: res.user,
-    // fav: res.favorites
+    fav: res.favorites,
     // once uncommented need to add getFavorites to pipeline
   });
 });

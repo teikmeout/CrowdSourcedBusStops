@@ -18,6 +18,8 @@ const options = {
 
 function errLocation() {
   console.log('Error retrieving location');
+  let pos = {lat: -25.363, lng: 131.044};
+  initMap(post);
 }
 // FUNCTION: uses HTML5 navigator to search for location and display it on map
 // ARGS: none
@@ -28,6 +30,9 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(initMap, errLocation, options);
   } else {
     $target.innerHTML = 'Location Tracking Failed';
+    // making a fall back in case location cannot be checked
+    let pos = {lat: -25.363, lng: 131.044};
+    initMap(post);
   }
 }
 

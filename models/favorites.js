@@ -7,6 +7,7 @@ const { getDB }    = require('../lib/dbConnect.js');
 // const DB_CONNECTION = 'mongodb://localhost:27017/itunescrud';
 
 function getFavorites(req, res, next) {
+  console.log(req.session.userId);
   // find all favorites for your userId
   getDB().then((db) => {
     db.collection('favorites')
