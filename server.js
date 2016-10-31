@@ -16,7 +16,7 @@ const methodOverride   = require('method-override');
 const homeRoute        = require('./routes/home');
 const mapRoute         = require('./routes/map');
 const geoRoute         = require('./routes/geo');
-const authRouter       = require('./routes/auth');
+const authRoute       = require('./routes/auth');
 
 // calling in a new instance of express
 const app              = express();
@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // using correct routes
 app.use('/', homeRoute);
-app.use('/auth', authRouter);
+app.use('/auth', authRoute);
 app.use('/map', mapRoute);
 app.use('/geo', geoRoute);
 
