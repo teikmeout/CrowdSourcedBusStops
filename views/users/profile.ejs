@@ -6,8 +6,16 @@
   </head>
   <body>
     <!-- Example -->
-    <h1>Welcome! <%= user.username %></h1>
-    <a href="/music">Music Search</a>
+    <h1>USER: <%= user.username %></h1>
+    <a href="/map">Add another location!</a>
+    <% fav.forEach((fv) => { %>
+    <div class='map-item'>
+      <p>lat: <%= fv.lat %>, lng: <%= fv.lng %></p>
+      <p>Bus route: <%= fv.%></p>
+      <form action="/music/favorites/<%= fave._id %>?_method=DELETE" method="post">
+          <input type="submit" value="Delete">
+    </div>
+    <% }%>
     <form action="/auth?_method=DELETE" method="post">
       <input type="submit" value="Logout">
     </form>
