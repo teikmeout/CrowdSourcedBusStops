@@ -11,6 +11,17 @@ html, body {
 
 .login-content input {
   line-height: 2em;
+  width: 10em;
+}
+
+.sign-btn {
+  height: 2em;
+  width: 1em;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border: 0;
+  border-radius: 2px;
 }
 
 .container {
