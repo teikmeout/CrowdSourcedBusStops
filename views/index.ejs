@@ -4,18 +4,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CrowdSourced Bus Stops</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="./images/bus_stop.png">
 </head>
-<body>
+<body id='index'>
   <div class="container">
-    <h1 class="login-content">Crowd Sourced Bus Stops</h1>
-    <form class="login-content" action="/auth" method="post">
-      <input class="login-content" type="text" name="user[username]" value="" placeholder="Username">
-      <input  class="login-content" type="password" name="user[password]" value="" placeholder="Password">
-      <input class="login-content sign-btn" type="submit" value="Sign in">
+    <div class="login-container">
+    <h1 class="login-content title">Crowd Sourced Bus Stops</h1>
+    <form action="/auth" method="post">
+      <input class="login-content input" type="text" name="user[username]" value="" placeholder="Username">
+      <input  class="login-content input" type="password" name="user[password]" value="" placeholder="Password">
+      <input class="sign-btn" type="submit" value="Sign in">
     </form>
-    <p class="login-content"><a href="/signup">sign up</a></p>
+    <p class="login-content"><a href="/signup" class='link'>sign up</a></p>
+
+    </div>
   </div>
 </body>
 </html>
