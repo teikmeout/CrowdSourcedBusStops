@@ -3,7 +3,7 @@
 const express             = require('express');
 const { createUser }      = require('../models/user.js');
 const { authenticate }    = require('../lib/auth');
-const { getFavorites }    = require('../models/favorites.js');
+const { getFavorites, deleteFavorites }    = require('../models/favorites.js');
 
 const usersRouter         = express.Router();
 
@@ -30,6 +30,10 @@ usersRouter.get('/profile', authenticate, getFavorites, (req, res) => {
     // once uncommented need to add getFavorites to pipeline
   });
 });
+
+usersRouter.delete('/delete/:id', deleteFavorites, (req, res) => {
+  res.redirect('/users/profile');
+})
 
 module.exports = usersRouter;
 

@@ -12,7 +12,7 @@
     <div class='map-item'>
       <p>lat: <%= fv.lat %>, lng: <%= fv.lng %></p>
       <p>Bus route: <%= fv.route %></p>
-      <form action="/music/favorites/<%#= fave._id %>?_method=DELETE" method="post">
+      <form action="/users/delete/<%= fv._id %>?_method=DELETE" method="post">
           <input type="submit" value="Delete">
       </form>
     </div>

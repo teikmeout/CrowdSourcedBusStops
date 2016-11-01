@@ -12,9 +12,9 @@ This is a web app that will allow users to save specific locations and mark them
 Some countries do not have a correct render of their public transportation information in Google Maps. Sometimes this is because of Private companies running these services not providing that information, but can also due to the lack of resources to provide it. 
 
 ### Interaction Design
-User will create a username and password saved into a MongoDB (the best way that it can be done there)
+User will create a username and password saved into a MongoDB (the best way that it can be done there by encrypting password via bcryptjs)
 Once user logs in, Map view will render via Google Maps API current location of user via browser's location
-The user will user current latitude and longitude, or dropped pin's location to determine a new stop that will be tagged with the name of the route the user takes there.
+The user will be able to see current latitude and longitude, and move pin's location to determine a new stop that will be tagged with the name of the route the user takes there.
 The user will be able to view his saved places and delete them if he considers that it's no longer a stop.
 
 ### Wireframes
@@ -30,9 +30,12 @@ Understanding User login flow
 - [x] Node.js
 - [x] Express
 - [x] Path
-- [ ] MongoDB
+- [x] MongoDB
 - [x] dotEnv
 - [x] HTML5 Geolocation
+- [x] bcryptjs
+- [x] Google Maps API
+- [x] Heroku
 
 ### References
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
