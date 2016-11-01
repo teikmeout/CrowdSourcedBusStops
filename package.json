@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/teikmeout/project2GA.git"
   },
+  "engines": {
+    "node": "6.6.0"
+  },
   "author": "Taka Ahrens",
   "license": "MIT",
   "bugs": {
