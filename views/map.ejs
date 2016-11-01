@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Map your bus stop!</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="./images/bus_stop.png">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -12,7 +14,7 @@
   <%# this is where the map goes %>
   <div id="map" class='mapa'></div>
   <%# this is where the info appears %>
-  <aside class="mapa">
+  <footer class="mapa">
     <div class='mapa user-info'>
       <h3>Username: </h3>
       <p class='username'><a href="/users/profile"><%= user.username %></a></p>
@@ -31,7 +33,7 @@
       <input type="submit" value="Save">
     </form>
     </div>
-  </aside>
+  </footer>
 
 <script src="/js/yes.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=API_KEY%>&callback=getLocation"
