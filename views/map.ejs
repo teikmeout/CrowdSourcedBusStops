@@ -9,7 +9,10 @@
   <link rel="icon" href="./images/bus_stop.png">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
-<body>
+<body class="mapa">
+<div class="container mapa">
+
+
 <h1>Bus Stop Crowdsourcing</h1>
   <%# this is where the map goes %>
   <div id="map" class='mapa'></div>
@@ -22,6 +25,7 @@
           <input type="submit" value="Logout">
       </form>
     </div>
+
     <div class='mapa loc-info'>
     <form action="/map/favorites" method="POST" accept-charset="utf-8">
       <h3>Lat</h3>
@@ -34,6 +38,7 @@
     </form>
     </div>
   </footer>
+</div>
 
 <script src="/js/yes.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=API_KEY%>&callback=getLocation"

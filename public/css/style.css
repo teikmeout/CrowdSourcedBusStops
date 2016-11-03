@@ -5,6 +5,11 @@ html, body {
     font-family: 'Ubuntu', sans-serif;;
 }
 
+body.mapa  {
+  background-color: rgb(211,211,211);
+  text-align: center;
+}
+
 .login-container {
   /*border: 2px red dotted;*/
   display: flex;
@@ -53,6 +58,11 @@ input[type="submit"]
   text-align: center;
 }
 
+.container.mapa {
+  width: 100vw;
+  height: 100vh;
+}
+
 .title {
   font-size: 3.5em;
   color: darkmagenta;
@@ -85,7 +95,7 @@ input[type="submit"]
   align-items: center;
 }
 
-.mapa.aside {
+footer.mapa {
   width: 30%;
   height: 400px;
   /*border: 2px dotted blue;*/
