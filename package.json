@@ -1,11 +1,11 @@
 {
   "name": "project2ga",
   "version": "1.0.0",
-  "description": "Jonathan Ahrens WDI General Assembly",
+  "description": "app made to capture location of bus stops to crowdsource routes",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon -e html,css,js server.js"
   },
   "repository": {
     "type": "git",
