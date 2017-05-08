@@ -3,26 +3,22 @@
 // to allow console log
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
-const dotEnv           = require('dotenv').config({silent: true});
+const dotEnv           = require('dotenv').config({ silent: true });
 const express          = require('express');
 const logger           = require('morgan');
 const path             = require('path');
 const bodyParser       = require('body-parser');
 const session          = require('express-session');
 const cookieParser     = require('cookie-parser');
+// might need to remove methd override
 const methodOverride   = require('method-override');
-
-// setting up routes
-const homeRoute        = require('./routes/home');
-const mapRoute         = require('./routes/map');
-const geoRoute         = require('./routes/geo');
-const authRoute        = require('./routes/auth');
-const usersRoute       = require('./routes/users'); // takes me to create user or show profile
 
 // calling in a new instance of express
 const app              = express();
 // setting up ports for server
 const port             = process.env.PORT || 3000;
+
+// secret for login token
 const SECRET           = 'taka3000';
 
 
@@ -30,14 +26,19 @@ const SECRET           = 'taka3000';
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// telling express that all static files come from this folder
+app.use(express.static(path.join(__dirname, 'public')));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 // setting morgan flavor to DEV
 app.use(logger('dev'));
-// middleware for method override
+
+// vv do I really need middleware for method override??
 app.use(methodOverride('_method'));
+// ^^ this might need to be deleted
+
 // This is how we read the cookies sent over from the browser
 app.use(cookieParser());
 // session creating
@@ -47,14 +48,7 @@ app.use(session({
   secret: SECRET,
 }));
 
-// telling express that all static files come from this folder
-app.use(express.static(path.join(__dirname, 'public')));
-
-// using correct routes
-app.use('/', homeRoute);
-app.use('/auth', authRoute);
-app.use('/map', mapRoute);
-app.use('/geo', geoRoute);
-app.use('/users', usersRoute);
+// sending ALL routes to Router
+app.use(require('./router.js'));
 
 app.listen(port, () => console.log(`Server running yeah! ${port}`));
