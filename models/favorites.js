@@ -1,26 +1,40 @@
 // this model interacts with the DB.
 // please TURN ON MONGOD
 
-const { ObjectID } = require('mongodb');
-const { getDB }    = require('../lib/dbConnect.js');
+// const { ObjectID } = require('mongodb');
+// const { getDB }    = require('../lib/dbConnect.js');
 
 // const DB_CONNECTION = 'mongodb://localhost:27017/itunescrud';
 
-function getFavorites(req, res, next) {
-  console.log(req.session.userId);
-  // find all favorites for your userId
-  getDB().then((db) => {
-    db.collection('favorites')
-      .find({ userId: { $eq: req.session.userId } })
-      .toArray((toArrErr, data) => {
-        if(toArrErr) return next(toArrErr);
-        res.favorites = data;
-        db.close();
-        next();
-      });
-      return false;
-  });
-  return false;
+const db = require('./db.js');
+
+// function getFavorites(req, res, next) {
+//   console.log(req.session.userId);
+//   // find all favorites for your userId
+//   getDB().then((db) => {
+//     db.collection('favorites')
+//       .find({ userId: { $eq: req.session.userId } })
+//       .toArray((toArrErr, data) => {
+//         if(toArrErr) return next(toArrErr);
+//         res.favorites = data;
+//         db.close();
+//         next();
+//       });
+//       return false;
+//   });
+//   return false;
+// }
+
+function getAllLocations(req, res, next) {
+  console.log('getAllLocations');
+  db.any(`SELECT * FROM locations;`)
+  .then((allLocations) => {
+    res.allLocations = allLocations;
+    next();
+  })
+  .catch((err) => {
+    next(err);
+  })
 }
 
 function saveFavorite(req, res, next) {
