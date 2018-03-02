@@ -1,4 +1,4 @@
-\c bus_stop_crowdsourcing
+-- \c bus_stop_crowdsourcing
 BEGIN;
 
 DROP TABLE IF EXISTS users CASCADE;
