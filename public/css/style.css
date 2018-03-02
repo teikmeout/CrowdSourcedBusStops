@@ -10,89 +10,15 @@ body.mapa  {
   text-align: center;
 }
 
-.login-container {
-  /*border: 2px red dotted;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-/* styling the autofill background color */
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px snow inset;
+.container.mapa {
+  width: 100vw;
+  height: 100vh;
 }
 
 /* changing the size of internat text of inputs*/
 input[type="text"], input[type="password"] {
     font-size:2em;
     /*padding: 0;*/
-}
-
-input[type="submit"]
-{
-    font-size:1.5em;
-    font-weight: 600;
-    /*padding: 0;*/
-}
-
-.login-content {
-  display: block;
-  margin: 10px;
-}
-
-.login-container {
-  border-radius: 1em;
-  background-color: rgba(175,238,238,.4);
-  height: ;
-  width: 50vw;
-}
-
-/* styling input tags*/
-.input {
-  /*line-height: 5e m;*/
-  height: 2em;
-  width: 10em;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.container.mapa {
-  width: 100vw;
-  height: 100vh;
-}
-
-.title {
-  font-size: 3.5em;
-  color: darkmagenta;
-  margin: 1em auto 1em auto;
-}
-
-.link {
-  color: snow;
-}
-
-.sign-btn {
-  height: 2em;
-  width: 6em;
-  background-color: lightslategrey;
-  color: white;
-  font-size: 1em;
-  text-align: center;
-  border: 0;
-  border-radius: 3px;
-  margin: 0;
-}
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,128,128, .3);
-  /*border: 10px red solid;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 footer.mapa {
@@ -103,10 +29,6 @@ footer.mapa {
   margin: 0 0 0 4em;
 }
 
-#index {
-  background-image: url('../images/busStop.jpeg');
-  background-size: cover;
-}
 #map {
   height: 400px;
   width: 60%;

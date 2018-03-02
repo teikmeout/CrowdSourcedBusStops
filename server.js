@@ -10,45 +10,62 @@ const path             = require('path');
 const bodyParser       = require('body-parser');
 const session          = require('express-session');
 const cookieParser     = require('cookie-parser');
+
+// setting up ports for server
+const PORT             = process.env.PORT || 3000;
+
 // might need to remove methd override
 const methodOverride   = require('method-override');
 
 // calling in a new instance of express
 const app              = express();
-// setting up ports for server
-const port             = process.env.PORT || 3000;
 
-// secret for login token
-const SECRET           = 'taka3000';
+// setting out logger as the first middleware
+app.use(logger('dev'));
+// different flavors for morgan
+//combined
+//common
+//dev
+//short
+//tiny
+
 
 
 // setting views to use ejs
 app.set('view engine', 'ejs');
-app.set('views', './views');
+// new ejs defaults to views folder
+// app.set('views', './views');
 
-// telling express that all static files come from this folder
+// telling express to server static assets from public
+// path helps tell node the full pwd of where public is
 app.use(express.static(path.join(__dirname, 'public')));
+
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+// in other words, accept forms and some old fancy forms too
+// extended true is for name="user[username]"
+// I'm not using that, so false
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // parse application/json
+// in other words, accept json stuff from postman or fetch, or axios or ajax
 app.use(bodyParser.json());
-// setting morgan flavor to DEV
-app.use(logger('dev'));
 
 // vv do I really need middleware for method override??
+// this would be in case of form deleting or put
+// maybe will need... will keep here
 app.use(methodOverride('_method'));
-// ^^ this might need to be deleted
 
 // This is how we read the cookies sent over from the browser
+// necessary for session login
 app.use(cookieParser());
 // session creating
 app.use(session({
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  secret: SECRET,
 }));
 
 // sending ALL routes to Router
 app.use(require('./router.js'));
 
-app.listen(port, () => console.log(`Server running yeah! ${port}`));
+app.listen(PORT, () => console.log(`🍙   ${PORT}, ${process.env.NODE_ENV}`));

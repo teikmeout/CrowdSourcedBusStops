@@ -31,40 +31,26 @@ function getLocationsByUser(req, res, next) {
 }
 
 // CREATE
-function saveFavorite(req, res, next) {
+function saveLocation(req, res, next) {
   // creating an empty object for the insertObj
   const insertObj = {};
-
-  // copying all of req.body into insertObj
-  for(let key in req.body) {
-    insertObj[key] = req.body[key];
-  }
-
+  insertObj.lat = parseFloat(req.body.lat);
+  insertObj.long = parseFloat(req.body.long);
+  insertObj.route = req.body.route;
   // Adding userId to insertObj
   insertObj.user_id = req.session.userId;
 
-  // getDB().then((db) => {
-  //   db.collection('favorites')
-  //     .insert(insertObj.favorite, (insertErr, result) => {
-  //       if (insertErr) return next(insertErr);
-  //       res.saved = result;
-  //       db.close();
-  //       next();
-  //     });
-  //     return false;
-  // });
-  // return false;
-
-  db.one(`INSERT INTO locations (lat, long, user_id)
-    VALUES ($[lat], $[long], $[user_id])
+  // console.log('the data', insertObj);
+  db.one(`INSERT INTO locations (lat, long, route,user_id)
+    VALUES ($[lat], $[long], $[route], $[user_id])
     RETURNING *;`, insertObj)
     .then((savedLocation) => {
-      console.log('location inserted correctly', savedLocation);
+      // console.log('location inserted correctly', savedLocation);
       res.locals.savedLocation = savedLocation;
       next();
     })
     .catch((err) => {
-      console.log('location insertion failed', err);
+      // console.log('location insertion failed', err);
       // res.status(500).json({
       //   message: 'failed inserting at saveFavorite',
       //   err,
@@ -76,8 +62,8 @@ function saveFavorite(req, res, next) {
 // Delete method doesn't change because we are deleting objects from the database
 // based on that object's unique _id - you do not need to specify which user as
 // the _id is sufficient enough
-function deleteFavorites(req, res, next) {
-  db.one(`DELETE FROM locations WHERE id = $1;`, req.params.id)
+function deleteLocation(req, res, next) {
+  db.one(`DELETE FROM locations WHERE id = $1 RETURNING *;`, req.params.id)
     .then((deletedLocation) => {
       console.log('location delted correctly', deletedLocation);
       res.locals.deletedLocation = deletedLocation;
@@ -102,8 +88,8 @@ function deleteFavorites(req, res, next) {
 
 module.exports = {
   getLocationsByUser,
-  saveFavorite,
-  deleteFavorites,
+  saveLocation,
+  deleteLocation,
 };
 
 // code taken from @rapala61 template

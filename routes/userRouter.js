@@ -1,11 +1,10 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
-const express             = require('express');
-const { createUser }      = require('../models/user.js');
+const usersRouter         = require('express').Router();
+const { createUser }      = require('../models/userModel.js');
 const { authenticate }    = require('../lib/auth');
-const { getFavorites, deleteFavorites }    = require('../models/favorites.js');
+const { getLocationsByUser, deleteLocation }    = require('../models/locationModel.js');
 
-const usersRouter         = express.Router();
 
 /**
  * Creates a new user by handling the POST request from a form with action `/users`
@@ -13,7 +12,7 @@ const usersRouter         = express.Router();
  */
 usersRouter.post('/', createUser, (req, res) => {
   // redirects to home page, to signin now that user is created
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 /**
@@ -23,7 +22,7 @@ usersRouter.post('/', createUser, (req, res) => {
  */
 
 // need to add function to pipeline that finds all the saved favs of this user
-usersRouter.get('/profile', authenticate, getFavorites, (req, res) => {
+usersRouter.get('/profile', authenticate, getLocationsByUser, (req, res) => {
   res.render('./users/profile', {
     user: res.user,
     fav: res.favorites,
@@ -31,11 +30,8 @@ usersRouter.get('/profile', authenticate, getFavorites, (req, res) => {
   });
 });
 
-usersRouter.delete('/delete/:id', deleteFavorites, (req, res) => {
+usersRouter.delete('/delete/:id', deleteLocation, (req, res) => {
   res.redirect('/users/profile');
-})
+});
 
 module.exports = usersRouter;
-
-// this users route might be redundant since I have a route for index.js
-// important to note that this is pretty necessary for login process

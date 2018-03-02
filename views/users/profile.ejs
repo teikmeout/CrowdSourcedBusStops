@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Profile</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
   </head>
   <body>
     <!-- Example -->
@@ -10,9 +15,9 @@
     <a href="/map">Add another location!</a>
     <% fav.forEach((fv) => { %>
     <div class='map-item'>
-      <p>lat: <%= fv.lat %>, lng: <%= fv.lng %></p>
+      <p>lat: <%= fv.lat %>, lng: <%= fv.long %></p>
       <p>Bus route: <%= fv.route %></p>
-      <form action="/users/delete/<%= fv._id %>?_method=DELETE" method="post">
+      <form action="/users/delete/<%= fv.id %>?_method=DELETE" method="post">
           <input type="submit" value="Delete">
       </form>
     </div>

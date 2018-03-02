@@ -5,7 +5,7 @@ const authRouter    = require('express').Router();
 const { logIn }     = require('../lib/auth');
 
 /**
- * Log In and if successful assign res.user._id to the session
+ * Log In and if successful assign res.user.id to the session
  * It uses the logIn middleware from the auth library to parse the form inputs
  * and save the user to the database
  */
@@ -16,6 +16,7 @@ authRouter.post('/', logIn, (req, res) => {
 
 // Logout by assigning null to the userId in the session
 authRouter.delete('/', (req, res) => {
+  console.log('signing out user', req.session.userId);
   req.session.userId = null;
   // takes you to homepage to signin again once logged out
   res.redirect('/');
