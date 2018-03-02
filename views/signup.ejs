@@ -3,11 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CrowdSourced Bus Stops</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <title>Signup</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/signup.css">
   <link rel="icon" href="./images/bus_stop.png">
 </head>
-<body>
+<body class="flexcolumn">
+<section class="signupCont flexcolumn card-1">
+  <h1>Create an Account!</h1>
+  <form action="/users" method="post" class="flexcolumn">
+    <div class="inputCont flexcolumn">
+      <div class="firstlastCont flexcolumn">
+        <input type="text" placeholder="First name" name="fname">
+        <input type="text" placeholder="Last name" name="lname">
+      </div>
+      <input type="text" placeholder="Username" name="uname">
+      <input type="password" placeholder="Password">
+      <input type="password" placeholder="Confirm password" name="pass">
+    </div>
+    <!-- <button>Sign up!</button> -->
+    <input type="submit" value="Sign Up!" class="card-2">
+  </form>
+<small>If you already have an account... <span><a href="/login">Login</a></span></small>
+</section>
+
+</body>
+</html>
+
+
+
+<!-- <body>
   <div class="container">
     <h1 class="login-content">Sign UP - Crowd Sourced Bus Stops</h1>
     <form class="login-content" action="/users" method="post">
@@ -17,4 +42,8 @@
     </form>
   </div>
 </body>
-</html>
+</html> -->
+
+
+
+

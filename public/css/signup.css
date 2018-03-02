@@ -1,0 +1,83 @@
+.flexcolumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  /*used flex column in here*/
+  font-family: 'Helvetica';
+  background: #e2e1e0
+}
+
+section.signupCont {
+  /*border: 1px solid blue;*/
+  border-radius: 2px;
+  height: 400px;
+  width: 600px;
+  background: #fff;
+  /*used flex column here*/
+  /*taken from this codepen https://codepen.io/sdthornton/pen/wBZdXq*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+section.signupCont:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+form {
+  width: 60%;
+}
+
+.inputCont {
+  /*used flex column, override justify content*/
+  justify-content: space-around;
+  height: 200px;
+  width: 80%;
+}
+
+.inputCont input {
+  height: 35px;
+  width: 98%;
+  border-radius: 2px;
+  border: 1px solid cadetblue;
+  font-size:12px;
+  padding-left: 5px;
+}
+
+.firstlastCont {
+  height: 50px;
+  width: 100%;
+  /*used flex column, override justify content and direction*/
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.firstlastCont input {
+  height: 35px;
+  width: 45%;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+  height: 30px;
+  width: 80px;
+  background-color: mediumturquoise;
+  color: white;
+  border-radius: 2px;
+  border-style: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+small {
+  margin-top: 20px;
+}
+
+
