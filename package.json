@@ -12,7 +12,7 @@
     "url": "git+https://github.com/teikmeout/project2GA.git"
   },
   "engines": {
-    "node": "6.6.0"
+    "node": "8.7.0"
   },
   "author": "Taka Ahrens",
   "license": "MIT",
@@ -21,26 +21,26 @@
   },
   "homepage": "https://github.com/teikmeout/project2GA#readme",
   "dependencies": {
-    "bcryptjs": "^2.3.0",
-    "body-parser": "^1.15.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "crypto": "0.0.3",
     "dotenv": "^2.0.0",
-    "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "express-session": "^1.14.1",
-    "method-override": "^2.3.6",
-    "mongodb": "^2.2.11",
-    "morgan": "^1.7.0",
-    "node-fetch": "^1.6.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mongodb": "^2.2.35",
+    "morgan": "^1.9.0",
+    "node-fetch": "^1.7.3",
     "path": "^0.12.7",
-    "pg-promise": "^5.6.7"
+    "pg-promise": "^5.9.7"
   },
   "devDependencies": {
-    "eslint": "^3.8.1",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.4.1"
+    "eslint-plugin-react": "^6.10.3"
   }
 }
