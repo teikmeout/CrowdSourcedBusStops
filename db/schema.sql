@@ -1,18 +1,19 @@
 BEGIN;
 
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS locations CASCADE;
 
 CREATE TABLE users (
-  id SERIAL NOT NULL,
+  id SERIAL NOT NULL PRIMARY KEY,
   uname VARCHAR NOT NULL,
   pass VARCHAR NOT NULL
 );
 
 CREATE TABLE locations (
-  id SERIAL NOT NULL,
+  id SERIAL NOT NULL PRIMARY KEY,
   lat INT NOT NULL,
   long INT NOT NULL,
-  user_id INT NOT NULL references users.id;
-)
+  user_id INT NOT NULL REFERENCES users
+);
 
 COMMIT;
